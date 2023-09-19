@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1d1e22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-wrapper {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    box-shadow: 0px 30px 40px -25px rgba(0, 0, 0, 0.5);
+  }
+  .card-wrapper:hover .card-top .side {
+    transform: rotateX(0deg);
+  }
+  .card-wrapper:hover .card-main .side2 {
+    transform: translateY(150px) rotateX(90deg);
+  }
+  .card-wrapper:hover .card-main .side1 {
+    transform: translateY(-150px) rotateX(90deg);
+  }
+  
+  .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 300px;
+    transition: 0.5s linear all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    background-size: 400px 300px;
+    cursor: pointer;
+  }
+  .card .side {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-size: 500px 300px;
+    transition: 0.5s linear transform;
+    transition: 0.6s cubic-bezier(0.35, 0.52, 0.51, 0.86) transform;
+  }
+  .card .side1 {
+    background-position: 0% 0%;
+  }
+  .card .side2 {
+    background-position: 100% 0;
+  }
+  .card.card-main {
+    transform-origin: bottom;
+  }
+  .card.card-main .side {
+    background-image: url("./images/wallpaperflare.com_wallpaper1.jpg");
+  }
+  .card.card-top {
+    transform-origin: bottom;
+    z-index: 2;
+  }
+  .card.card-top .side1 {
+    transform: translateY(150px) rotateX(90deg);
+  }
+  .card.card-top .side2 {
+    transform: translateY(-150px) rotateX(90deg);
+  }
+  .card.card-top .side {
+    background-image: url("./images/wallpaperflare.com_wallpaper2.jpg");
+  }
